@@ -111,10 +111,10 @@ open class WebSocket : NSObject, StreamDelegate {
 
     /// Responds to callback about new messages coming in over the WebSocket
     /// and also connection/disconnect messages.
-    public weak var delegate: WebSocketDelegate?
+    open weak var delegate: WebSocketDelegate?
 
     /// Receives a callback for each pong message recived.
-    public weak var pongDelegate: WebSocketPongDelegate?
+    open weak var pongDelegate: WebSocketPongDelegate?
 
 
     // MARK: - Block based API.
@@ -180,7 +180,7 @@ open class WebSocket : NSObject, StreamDelegate {
     /**
      Connect to the WebSocket server on a background thread.
      */
-    public func connect() {
+    open func connect() {
         guard !isConnecting else { return }
         didDisconnect = false
         isConnecting = true
